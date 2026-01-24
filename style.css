@@ -1,39 +1,81 @@
-/* Enable Smooth Scrolling */
+/* Smooth Scrolling Magic */
 html {
     scroll-behavior: smooth;
 }
 
-/* Ensure sections are tall enough to scroll between */
-section {
-    padding: 100px 20px;
-    min-height: 60vh; /* This ensures there's room to scroll */
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
 
-/* Navigation - Keep it sticky so links are always available */
+/* Sticky Navigation */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(44, 62, 80, 0.95); /* Slight transparency */
+    background: #2c3e50;
+    color: white;
     display: flex;
     justify-content: space-between;
-    padding: 15px 5%;
+    padding: 1rem 5%;
     z-index: 1000;
 }
 
 nav ul { display: flex; list-style: none; }
-nav ul li a { color: white; text-decoration: none; margin-left: 20px; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: #ecf0f1; text-decoration: none; font-weight: bold; }
 
-/* Offset for Sticky Nav */
-/* When you scroll to an ID, the sticky nav might cover the title. 
-   This fix adds invisible padding to the top of each section. */
-section::before {
-    content: "";
-    display: block;
-    height: 70px; /* Match this to your nav height */
-    margin-top: -70px;
-    visibility: hidden;
+/* Section Spacing (Prevents Nav from covering titles) */
+section {
+    padding: 100px 20px;
+    min-height: 80vh; /* Keeps each section feeling substantial */
 }
 
-.dark-bg { background-color: #ecf0f1; }
-.map-wrapper { max-width: 800px; margin: 20px auto; }
+/* Offset fix for Anchor Links */
+section[id] {
+    scroll-margin-top: 70px;
+}
+
+/* Hero Style */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #34495e;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn {
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Grid for Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid #3498db;
+}
+
+/* Map Styling */
+.map-container {
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+footer { padding: 40px; text-align: center; background: #2c3e50; color: white; }
