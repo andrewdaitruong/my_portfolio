@@ -22,4 +22,3 @@ jobs:
             publish_dir: ./frontend  # This points to your specific folder
             publish_branch: gh-pages  # The "secret" branch for the live site 
             cname: andrewdaitruong.com
-            # maybe?
