@@ -1,0 +1,72 @@
+DOMAIN CONFIGURATION
+----------------------------------------------------------------------------------
+1. Bought a domain on porkbun.com for x amount of years (andrewdaitruong.com)
+2. Configured the domain to allow the use of GitHub Pages
+    - Removed all current A Addresses and CNAME
+    - Add 4 different A Addresses
+        -> 185.199.108.153
+        -> 185.199.109.153
+        -> 185.199.110.153
+        -> 185.199.111.153
+    - Add CNAME which should be the domain, in my case andrewdaitruong.com
+
+GETTING THE GITHUB SSH KEY
+----------------------------------------------------------------------------------
+1. In the terminal, use command "ssh-keygen -t ed25519 -C "your_email@example.com" (Replace your_email@example.com with your GitHub email)
+2. It will prompt you to enter a file name, a passphrase, verification of passphrase.
+3. Go to the ssh.pub file location and open the file in a notepad. The Public Key should start with 'ssh-rsa'
+    - By default it should be under C:\Users\Name\.ssh
+4. After copying the Public Key, go to GitHub > Settings > SSH and GPG keys
+    - Click 'New SSH key'
+    - Title the Key
+    - Paste the key into the Key area
+    - Click 'Add SSH key'
+5. Now go to terminal and use command 'ssh -T git@github.com'
+6. It should say "Are you sure you want to ..." type 'yes' and enter
+7. It should be you a 'Warning:' But that can be ignored. 
+    The main part is that it should say "Hi 'github username'! You've successfully authenticated..."
+
+CONFIGURING GITHUB PAGES
+----------------------------------------------------------------------------------
+1. Create your repository
+2. Open up VSC and add a folder called frontend in your repository and add a file called deploy.yml inside that folder
+3. Make a main.py in the root folder
+4. Initialize the repository and push everything into it
+    - Note that when pushing, the deploy.yml will create a new branch for you called "gh-pages"
+
+# ------------------ deploy.yml -------------------#
+name: Deploy Frontend to Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger whenever you push to main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./frontend  # This tells it to only deploy the frontend folder
+            publish_branch: gh-pages  # It will create a new branch called 'gh-pages'
+            cname: # ADD DOMAIN NAME HERE 
+# -----------------------------------------------------#
+
+5. In your repository, go to Settings > Pages > Custom Domain 
+    - Enter your domain
+    - Under branches, I have mine set to gh-pages targetting the folder /(root) because I wanted to separate my HTML/CSS in a separate folder
+        This allows me to save it to that branch from the main branch so I have a cleaner interface
+
+MAKING THE FILES
+1. Inside my frontend folder, I have all my HTML/CSS files as well as a photo called assets incase I want to add images.
+2. Anything that I add, commit, push from now if it involves my frontend will also be written into the gh-pages branch 
+    which should be the part that is showing on the website
