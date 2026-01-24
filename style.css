@@ -19,6 +19,26 @@ nav {
     z-index: 1000;
 }
 
+/* Navigation Bar */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #333;
+    display: flex;
+    float: left;
+}
+
+navbar ul li a:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: black; /* Text color on hover */
+}
+
+.navbar ul li a.active {
+    background-color: #04AA6D; /* Background color for the current page */
+    color: white;
+}
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 20px; }
 nav ul li a { color: #ecf0f1; text-decoration: none; font-weight: bold; }
