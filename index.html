@@ -11,25 +11,38 @@
     <nav>
         <div class="logo">ADT</div>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="location.html">Location</a></li>
-            <li><a href="projects.html">Projects</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#location">Location</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my work in Full-Stack Development and Network Systems.</p>
-        <a href="projects.html" class="btn">View Projects</a>
+    <header id="hero" class="hero">
+        <h1>Andrew Dai Truong</h1>
+        <p>Full-Stack Developer & 3D Printing Enthusiast</p>
     </header>
 
-    <main class="container">
-        <h2>Quick Highlights</h2>
-        <p>I'm a developer based in Garden Grove, specialized in Python and custom hardware solutions.</p>
-    </main>
+    <section id="projects" class="container">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <h3>Gym Flow</h3>
+            <p>Senior Capstone Project - CPSC 491</p>
+        </div>
+        </section>
+
+    <section id="location" class="container dark-bg">
+        <h2>Find Me</h2>
+        <p>Based in Garden Grove, CA</p>
+        <div class="map-wrapper">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53066.31422031737!2d-117.98902506456075!3d33.76985060893112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd262312689551%3A0x63363372f88f01c2!2sGarden%20Grove%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000" 
+                width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 andrewdaitruong.com</p>
+        <p>© 2026 andrewdaitruong.com</p>
     </footer>
 
 </body>

@@ -1,25 +1,39 @@
-/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background-color: #f9f9f9; color: #333; }
+/* Enable Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
-/* Navigation Styling */
+/* Ensure sections are tall enough to scroll between */
+section {
+    padding: 100px 20px;
+    min-height: 60vh; /* This ensures there's room to scroll */
+}
+
+/* Navigation - Keep it sticky so links are always available */
 nav {
-    background: #2c3e50;
-    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(44, 62, 80, 0.95); /* Slight transparency */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 15px 5%;
+    z-index: 1000;
 }
-nav .logo { color: white; font-weight: bold; font-size: 1.5rem; }
+
 nav ul { display: flex; list-style: none; }
-nav ul li a { color: #bdc3c7; text-decoration: none; margin-left: 20px; transition: 0.3s; }
-nav ul li a:hover, nav ul li a.active { color: white; }
+nav ul li a { color: white; text-decoration: none; margin-left: 20px; }
 
-/* Layout Containers */
-.container { max-width: 1000px; margin: 50px auto; padding: 0 20px; text-align: center; }
-.hero { background: #34495e; color: white; padding: 100px 20px; text-align: center; }
+/* Offset for Sticky Nav */
+/* When you scroll to an ID, the sticky nav might cover the title. 
+   This fix adds invisible padding to the top of each section. */
+section::before {
+    content: "";
+    display: block;
+    height: 70px; /* Match this to your nav height */
+    margin-top: -70px;
+    visibility: hidden;
+}
 
-/* Map Wrapper */
-.map-wrapper { margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-
-footer { padding: 40px; text-align: center; color: #7f8c8d; }
+.dark-bg { background-color: #ecf0f1; }
+.map-wrapper { max-width: 800px; margin: 20px auto; }
