@@ -1,101 +1,68 @@
-/* Smooth Scrolling Magic */
-html {
-    scroll-behavior: smooth;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
 
-/* Sticky Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #2c3e50;
-    color: white;
+/* Navbar Container */
+.navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Puts logo on left, links on right */
+    align-items: center;
     padding: 1rem 5%;
+    background-color: #ffffff; /* Or any color you prefer */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle depth */
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
-/* Navigation Bar */
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #333;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Turning the bulleted list into a horizontal bar */
+.nav-links {
     display: flex;
-    float: left;
+    list-style: none;
 }
 
-navbar ul li a:hover {
-    background-color: #ddd; /* Background color on hover */
-    color: black; /* Text color on hover */
+.nav-links li {
+    margin-left: 20px;
 }
 
-.navbar ul li a.active {
-    background-color: #04AA6D; /* Background color for the current page */
-    color: white;
-}
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav ul li a { color: #ecf0f1; text-decoration: none; font-weight: bold; }
-
-/* Section Spacing (Prevents Nav from covering titles) */
-section {
-    padding: 100px 20px;
-    min-height: 80vh; /* Keeps each section feeling substantial */
-}
-
-/* Offset fix for Anchor Links */
-section[id] {
-    scroll-margin-top: 70px;
-}
-
-/* Hero Style */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), #34495e;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-.btn {
-    background: #3498db;
-    color: white;
-    padding: 12px 30px;
+.nav-links a {
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-/* Grid for Projects */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 40px auto;
+.nav-links a:hover {
+    color: #3498db; /* Changes color when you hover */
 }
 
-.card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-top: 5px solid #3498db;
+/* Description Section under the Navbar */
+.hero-content {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
 }
 
-/* Map Styling */
-.map-container {
-    max-width: 900px;
-    margin: 30px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-footer { padding: 40px; text-align: center; background: #2c3e50; color: white; }
+.hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+}
