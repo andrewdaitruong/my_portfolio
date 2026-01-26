@@ -11,7 +11,9 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar Container */
+/***************************************************************/
+/************************ Navigation Bar ***********************/
+/***************************************************************/
 .navbar {
     display: flex;
     justify-content: space-between; /* Puts logo on left, links on right */
@@ -55,6 +57,9 @@ body {
     color: #2498db;
 }
 
+/***************************************************************/
+/************************ Parallax Sections ********************/
+/***************************************************************/
 /* Enable Smooth Scrolling for your href links */
 html {
     scroll-behavior: smooth;
@@ -79,7 +84,9 @@ html {
     background-size: cover;
 }
 
-/* Specific backgrounds for each section */
+/***************************************************************/
+/************************ Image Section*************************/
+/***************************************************************/
 .home-bg {
     background-image: url('assets/home-bg.jpg'); /* Use a high-res tech image */
 }
@@ -93,11 +100,9 @@ html {
     background-image: url('assets/location-bg.jpg');
 }
 
-/* Ensure content inside doesn't get lost */
-.hero-content, .section-title {
-    z-index: 10;
-}
-
+/***************************************************************/
+/******************** Section Content Styling ******************/
+/***************************************************************/
 /* Container sizing */
 .profile-container, .about-container, .projects-grid {
     background: rgba(255, 255, 255, 0.9); /* Slight transparency */
@@ -108,7 +113,7 @@ html {
     text-shadow: none; /* Resetting the shadow from parallax-section */
 }
 
-/* 1st Box: Home (Compact) */
+/*************** 1st Nav-Link: Home (Compact) ***************/
 .profile-container {
     max-width: 500px;
     text-align: center;
@@ -122,7 +127,7 @@ html {
     border: 3px solid #2498db;
 }
 
-/* 2nd Box: About (Medium/Wide) */
+/*************** 2nd Nav-Link: About (Medium/Wide) ***************/
 .about-container {
     max-width: 900px;
     display: flex;
@@ -133,7 +138,7 @@ html {
 .about-text { flex: 2; }
 .about-map { flex: 1; height: 200px; background: #eee; border-radius: 15px; }
 
-/* 3rd Box: Projects (Large/Full) */
+/**************** 3rd Nav-Link: Projects (Large/Full) ***************/
 .projects-grid {
     max-width: 1100px;
     width: 90%;
