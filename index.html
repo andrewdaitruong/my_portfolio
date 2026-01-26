@@ -22,7 +22,7 @@
         <div class="profile-pic">
             <img src="assets/your-photo.jpg" alt="Andrew Dai Truong">
         </div>
-        <h1>Andrew Dai Truong</h1>
+        <h1>Andrew Truong</h1>
         <div class="status-indicator">
                 <span class="status-dot"></span>
                 <span class="status-text">Available for work</span>
@@ -56,26 +56,7 @@
         <p>© 2026 andrewdaitruong.com</p>
     </footer>
 
-<script>
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      // 1. Prevent the default behavior of adding the #ID to the URL
-      e.preventDefault();
-
-      // 2. Get the target section ID from the href
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-
-      // 3. Smooth scroll to the section
-      targetElement.scrollIntoView({
-        behavior: 'smooth'
-      });
-
-      // 4. Update the URL back to the root without refreshing or adding a hash
-      window.history.pushState(null, null, ' ');
-    });
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
