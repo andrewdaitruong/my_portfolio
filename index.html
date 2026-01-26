@@ -17,10 +17,45 @@
         </ul>
     </nav>
 
-    <header class="hero-content">
+<header id="home" class="parallax-section home-bg">
+    <div class="hero-content">
         <h1>Andrew Dai Truong</h1>
         <p>Full-Stack Developer | Python and Network</p>
-    </header>
+    </div>
+</header>
+
+<section id="projects" class="parallax-section projects-bg">
+    <h2 class="section-title">Projects</h2>
+    </section>
+
+<section id="location" class="parallax-section location-bg">
+    <h2 class="section-title">Location</h2>
+    </section>
+
+    <footer>
+        <p>© 2026 andrewdaitruong.com</p>
+    </footer>
+
+<script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 1. Prevent the default behavior of adding the #ID to the URL
+      e.preventDefault();
+
+      // 2. Get the target section ID from the href
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      // 3. Smooth scroll to the section
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      // 4. Update the URL back to the root without refreshing or adding a hash
+      window.history.pushState(null, null, ' ');
+    });
+  });
+</script>
 
 </body>
 </html>
