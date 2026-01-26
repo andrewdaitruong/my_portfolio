@@ -154,6 +154,30 @@ html {
     min-height: 200px;
 }
 
+/**************** 4th Nav-Link: Contact (Medium/Wide) ***************/
+.contact-container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+    margin-top: 20px;
+}
+
+/* .contact-link i {
+    font-size: 1.5rem;
+    color: #2498db;
+    transition: transform 0.3s ease;
+} */
+
 /***************************************************************/
 /******************** Status Dot Styling ***********************/
 /***************************************************************/
