@@ -109,3 +109,54 @@ html {
 .hero-content, .section-title {
     z-index: 10;
 }
+
+/* Container sizing */
+.profile-container, .about-container, .projects-grid {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    color: #333;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-shadow: none; /* Resetting the shadow from parallax-section */
+}
+
+/* 1st Box: Home (Compact) */
+.profile-container {
+    max-width: 500px;
+    text-align: center;
+}
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #2498db;
+}
+
+/* 2nd Box: About (Medium/Wide) */
+.about-container {
+    max-width: 900px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text { flex: 2; }
+.about-map { flex: 1; height: 200px; background: #eee; border-radius: 15px; }
+
+/* 3rd Box: Projects (Large/Full) */
+.projects-grid {
+    max-width: 1100px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #f4f4f4;
+    padding: 30px;
+    border-radius: 15px;
+    min-height: 200px;
+}
