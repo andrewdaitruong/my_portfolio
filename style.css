@@ -47,7 +47,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #3498db; /* Changes color when you hover */
+    color: #2498db; /* Changes color when you hover */
 }
 
 /* Description Section under the Navbar */
@@ -65,4 +65,46 @@ body {
 .hero-content p {
     font-size: 1.2rem;
     color: #666;
+}
+
+/* Enable Smooth Scrolling for your href links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base style for all parallax sections */
+.parallax-section {
+    position: relative;
+    height: 100vh; /* Takes up the full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Makes text readable over images */
+    
+    /* THE PARALLAX MAGIC */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Specific backgrounds for each section */
+.home-bg {
+    background-image: url('assets/home-bg.jpg'); /* Use a high-res tech image */
+}
+
+.projects-bg {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/projects-bg.jpg');
+    /* I added a dark gradient above to make the project text pop */
+}
+
+.location-bg {
+    background-image: url('assets/location-bg.jpg');
+}
+
+/* Ensure content inside doesn't get lost */
+.hero-content, .section-title {
+    z-index: 10;
 }
