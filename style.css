@@ -154,12 +154,38 @@ html {
     min-height: 200px;
 }
 
-.dot {
-    height: 12px;
-    width: 12px;
+/***************************************************************/
+/******************** Status Dot Styling ***********************/
+/***************************************************************/
+/*** Container ***/
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+/*** STATUS DOT ***/
+.status-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #2ecc71; /* Solid Green */
     border-radius: 50%;
     display: inline-block;
-    margin-right: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    /* Optional: Subtle glow to make it stand out */
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.6);
+}
+
+/*** STATUS TEXT ***/
+.status-text {
+    font-size:.6rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/*** DESCRIPTION ***/
+.hero-desc {
+    font-size: 1.1rem;
+    color: #444;
 }
