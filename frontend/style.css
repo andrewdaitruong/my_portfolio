@@ -106,7 +106,7 @@ html {
 /******************** Section Content Styling ******************/
 /***************************************************************/
 /* Container sizing */
-.profile-container, .about-container, .projects-grid {
+.profile-container, .about-container, .projects-grid, .contact-container {
     background: rgba(255, 255, 255, 0.9); /* Slight transparency */
     color: #333;
     padding: 40px;
@@ -173,6 +173,7 @@ html {
     gap: 10px; /* Space between icon and text */
     margin-top: 20px;
 }
+
 
 /* .contact-link i {
     font-size: 1.5rem;
